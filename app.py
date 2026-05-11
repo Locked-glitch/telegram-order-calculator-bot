@@ -8,7 +8,7 @@ def send_message(chat_id, reply):
         "chat_id": chat_id,
         "text": reply
     })
-@app.route(f"/{TOKEN}",methods=["POST"])
+@app.route("/",methods=["POST"])
 def risk_management():
     data = request.get_json()
     message = data["message"]
