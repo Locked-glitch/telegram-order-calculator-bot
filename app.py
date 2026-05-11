@@ -1,14 +1,14 @@
 from flask import Flask, request
 import requests
 app = Flask(__name__)
-TOKEN = "token"
+TOKEN = "8749691441:AAH7SbWP1YC8_kwXr42emE1vVvt1sZAdn3k"
 def send_message(chat_id, reply):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     requests.post(url, json={
         "chat_id": chat_id,
         "text": reply
     })
-@app.route("/",methods=["POST"])
+@app.route(f"/{TOKEN}",methods=["POST"])
 def risk_management():
     data = request.get_json()
     message = data["message"]
