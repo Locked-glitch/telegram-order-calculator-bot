@@ -1,9 +1,12 @@
 from flask import Flask, request
 import requests
 
+import os
+
+TOKEN = os.getenv("BOT_TOKEN")
 app = Flask(__name__)
 
-TOKEN = "8749691441:AAH7SbWP1YC8_kwXr42emE1vVvt1sZAdn3k"
+
 
 
 def send_message(chat_id, reply):
